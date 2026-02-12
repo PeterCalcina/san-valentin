@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    Hay personas que son lecciones de vida en su forma más bonita. Gracias por
-    todo lo que he aprendido todo este tiempo. 📚❤️ ✨.
     <div class="book-container">
-      <div class="book">
-        <div class="book-cover">
+      <div class="book" id="book">
+        <!-- Portada (frente) -->
+        <div class="book-cover" id="bookCover">
           <div class="cover-content">
             <h2>PARA LA MEJOR DE TODAS</h2>
             <div class="heart"></div>
@@ -19,17 +18,15 @@
           </div>
         </div>
 
-        <div class="book-page">
+        <!-- Página interior (atrás) -->
+        <div class="book-page" id="bookPage">
           <div class="page-content">
             <h3>Para mi gran guía:</h3>
-            <p>
-              Hay personas que son lecciones de vida en su forma más bonita.
-              Gracias por todo lo que he aprendido todo este tiempo. 📚❤️ ✨.
-            </p>
-            <p>
-              <strong
-                >¡Gracias por enseñarme tanto en tan poco tiempo! ✨</strong
-              >
+            <div class="text-box" id="textBox">
+              <p id="animatedText"></p>
+            </div>
+            <p class="closing-text" id="closingText">
+              <strong>¡Gracias por enseñarme tanto en tan poco tiempo! ✨</strong>
             </p>
           </div>
         </div>

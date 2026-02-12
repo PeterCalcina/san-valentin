@@ -1,14 +1,65 @@
 const book = document.querySelector('.book');
+const textBox = document.getElementById('textBox');
+const animatedText = document.getElementById('animatedText');
+const closingText = document.getElementById('closingText');
+const bookCover = document.getElementById('bookCover');
+
+const fullText = 'Hay personas que son lecciones de vida en su forma más bonita. Gracias por todo lo que he aprendido todo este tiempo. 📚❤️ ✨';
+
+let isOpen = false;
+let typingInterval = null;
 
 book.addEventListener('click', () => {
-  // Abrir o cerrar el libro
-  book.classList.toggle('open');
+  isOpen = !isOpen;
+  
+  if (isOpen) {
+    book.classList.add('open');
+    // Iniciar la animación de escritura después de que el libro se abra
+    setTimeout(() => {
+      typewriterAnimation();
+    }, 600);
+  } else {
+    book.classList.remove('open');
+    // Detener la animación de escritura
+    if (typingInterval) {
+      clearInterval(typingInterval);
+      typingInterval = null;
+    }
+    // Limpiar el texto cuando se cierra
+    animatedText.textContent = '';
+    closingText.classList.remove('show');
+  }
   
   // Lanzar estrellas solo si se abre
-  if (book.classList.contains('open')) {
+  if (isOpen) {
     createStars();
   }
 });
+
+function typewriterAnimation() {
+  let index = 0;
+  animatedText.textContent = '';
+  
+  // Detener cualquier intervalo anterior
+  if (typingInterval) {
+    clearInterval(typingInterval);
+  }
+  
+  // Animación de escritura más lenta (120ms por carácter)
+  typingInterval = setInterval(() => {
+    if (index < fullText.length) {
+      animatedText.textContent += fullText[index];
+      index++;
+    } else {
+      clearInterval(typingInterval);
+      typingInterval = null;
+      // Mostrar el texto de cierre después de terminar
+      setTimeout(() => {
+        closingText.classList.add('show');
+      }, 500);
+    }
+  }, 120);
+}
 
 function createStars() {
   for (let i = 0; i < 20; i++) {
@@ -37,6 +88,6 @@ function createStars() {
     }, 50);
     
     // Limpieza
-    setTimeout(() => star.remove(), 1500);
+    setTimeout(() => star.remove(), 500);
   }
 }
