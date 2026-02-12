@@ -1,0 +1,94 @@
+body {
+  background-color: #e0d1c1; /* Color tipo pergamino antiguo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  perspective: 1500px; /* Profundidad 3D */
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+.book {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+
+/* Girar el libro cuando tiene la clase 'open' */
+.book.open {
+  transform: rotateY(-150deg);
+}
+
+.book-cover, .book-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 5px 15px 15px 5px;
+  box-shadow: 15px 15px 30px rgba(0,0,0,0.3);
+  backface-visibility: hidden;
+}
+
+.book-cover {
+  background: linear-gradient(135deg, #8b0000 0%, #5d0000 100%);
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-left: 10px solid #3d0000;
+  transform-origin: left;
+}
+
+.book-page {
+  background-color: #fff9f0;
+  z-index: 1;
+  display: flex;
+  padding: 30px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* El Corazón Dorado */
+.heart {
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700;
+  position: relative;
+  transform: rotate(45deg);
+  margin: 30px;
+  transition: 0.5s;
+}
+
+.heart::before, .heart::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  position: absolute;
+}
+.heart::before { top: -15px; left: 0; }
+.heart::after { left: -15px; top: 0; }
+
+.book.open .heart {
+  filter: drop-shadow(0 0 15px #ffd700);
+}
+
+.cover-content p {
+  font-size: 0.9em;
+  opacity: 0.8;
+  font-style: italic;
+}
