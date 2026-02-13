@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>San Valentín</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <audio id="bgAudio" loop>
+      <source src="resources/audio.mp3" type="audio/mpeg" />
+    </audio>
+
     <div class="book-container">
       <div class="book" id="book">
-        <!-- Portada (frente) -->
-        <div class="book-cover" id="bookCover">
+        <div
+          class="book-cover"
+          id="bookCover"
+          style="
+            background-image: url(&quot;images/background.jpeg&quot;);
+            background-size: cover;
+            background-position: center;
+          "
+        >
           <div class="cover-content">
             <h2>PARA LA MEJOR DE TODAS</h2>
             <div class="heart"></div>
@@ -18,15 +37,25 @@
           </div>
         </div>
 
-        <!-- Página interior (atrás) -->
         <div class="book-page" id="bookPage">
+          <div class="deco-nature"></div>
+          <div class="deco-design-top-right"></div>
+          <div class="deco-ballon deco-ballon-1"></div>
+          <div class="deco-ballon deco-ballon-2"></div>
+          <div class="deco-ballon deco-ballon-3"></div>
+          <div class="deco-ballon deco-ballon-4"></div>
+          <div class="deco-ballon deco-ballon-5"></div>
+          <div class="deco-ballon deco-ballon-6"></div>
+
           <div class="page-content">
             <h3>Para mi gran guía:</h3>
             <div class="text-box" id="textBox">
               <p id="animatedText"></p>
             </div>
             <p class="closing-text" id="closingText">
-              <strong>¡Gracias por enseñarme tanto en tan poco tiempo! ✨</strong>
+              <strong
+                >¡Gracias por enseñarme tanto en tan poco tiempo! ✨</strong
+              >
             </p>
           </div>
         </div>
