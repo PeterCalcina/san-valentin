@@ -4,7 +4,7 @@ const closingText = document.getElementById("closingText");
 const bgAudio = document.getElementById("bgAudio");
 
 const fullText =
-  "Hay personas que son lecciones de vida en su forma más bonita. Gracias por todo lo que he aprendido todo este tiempo. 📚❤️ ✨";
+  "Hay personas que son lecciones de vida en su forma más bonita. Gracias por todo lo que he aprendido todo este tiempo. \r\n 📚 ❤️ ✨";
 
 let isOpen = false;
 let timeoutId = null;
