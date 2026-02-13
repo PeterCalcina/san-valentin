@@ -72,6 +72,13 @@ body {
   margin-top: 100px;
 }
 
+.cover-content .to-name {
+  position: absolute;
+  top: 118px;
+  left: 20px;
+  font-size: 28px;
+}
+
 .book-page {
   position: absolute;
   inset: 0;
